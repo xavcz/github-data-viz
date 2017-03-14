@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xavcz/github-data-viz.svg?branch=master)](https://travis-ci.org/xavcz/github-data-viz)
+
 ### GitHub Data Visualization
 
 :octocat:
@@ -8,7 +10,7 @@ Create a `.env` file at the root of the project & add [your own GitHub Token](ht
 
 ```
 REACT_APP_GITHUB_TOKEN=xxx
-``
+```
 
 ```sh
 yarn
