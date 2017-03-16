@@ -11,6 +11,7 @@
     "react-apollo": "^1.0.0-rc.2",
     "react-dom": "^15.4.2",
     "react-octicons-svg": "^1.1.13",
+    "recompose": "^0.22.0",
     "redux": "^3.6.0",
     "styled-components": "^1.4.4"
   },

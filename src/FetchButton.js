@@ -1,27 +1,54 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
-import { MarkGithubIcon, HubotIcon, RepoPullIcon, RepoCloneIcon } from 'react-octicons-svg';
+import { MarkGithubIcon, HubotIcon, RepoPullIcon, RepoCloneIcon, BugIcon } from 'react-octicons-svg';
+import { withApollo } from 'react-apollo';
+import { /*withProps, branch, renderComponent,*/ withState, pure, compose } from 'recompose';
 
 import { colors, spacing, fonts, cubic } from './lib/styles';
+import { GITHUB_ORG_TOTAL_REPOS } from './lib/queries';
 
+// some constants defining the different button states
 export const statusList = [
   { id: 'init', icon: MarkGithubIcon, caption: 'Fetch organization repositories' },
   { id: 'loading', icon: HubotIcon, caption: 'Loading...', disabled: true },
   { id: 'populating', icon: RepoPullIcon, caption: 'Populating graph...', disabled: true },
   { id: 'refetch', icon: RepoCloneIcon, caption: 'Refetch data!' },
+  { id: 'error', icon: BugIcon, caption: 'Something bad happened...', disabled: true },
 ];
 
-const FetchButton = ({ statusId = 'init' }) => {
-  const { icon: IconComponent, caption, disabled } = statusList.find(status => status.id === statusId);
+// control the button status thanks to a setStatus event handler
+const withStatusControl = withState('statusId', 'setStatus', 'init');
+
+export const FetchButtonPure = ({ client, statusId, setStatus }) => {
+  const { icon: IconComponent, caption, disabled } = statusList.find(
+    status => status.id === statusId
+  );
+
+  const loadRepositories = event => {
+    event.preventDefault();
+    
+    setStatus('loading');
+    
+    return client.query({query: GITHUB_ORG_TOTAL_REPOS})
+          .then(result => {
+            setStatus('populating')
+            console.log('🚀', result);
+          })
+          .catch(error => {
+            setStatus('error');
+            console.error('Something bad happened... Is the query correct or the GitHub GraphQL API down? :(\nHere is the error', error);
+          });
+  };
 
   return (
-    <Button disabled={disabled}>
+    <Button disabled={disabled} onClick={loadRepositories}>
       <IconComponent />{caption}
     </Button>
   );
 };
 
-FetchButton.propTypes = {
+FetchButtonPure.propTypes = {
+  client: PropTypes.any,
   statusId: PropTypes.oneOf(statusList.map(status => status.id)),
 };
 
@@ -54,5 +81,11 @@ const Button = styled.button`
     background-color: ${colors.grey};
   }
 `;
+
+const FetchButton = compose(
+  withStatusControl,
+  withApollo,
+  pure,
+)(FetchButtonPure);
 
 export default FetchButton;

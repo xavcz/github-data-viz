@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import FetchButton, { statusList } from './FetchButton';
+import { FetchButtonPure, statusList } from './FetchButton';
 
 // note: I may "go too far" on this, but I find this pretty cool.
 
@@ -9,7 +9,7 @@ statusList
   .map(status => status.id)
   .reduce(
     (storiesOf, statusId) =>
-      storiesOf.add(`${statusId} state`, () => <FetchButton statusId={statusId} />),
+      storiesOf.add(`${statusId} state`, () => <FetchButtonPure statusId={statusId} />),
     storiesOf('FetchButton', module)
   );
 

@@ -6,6 +6,7 @@ import { gql } from 'react-apollo';
 export const GITHUB_ORG_TOTAL_REPOS = gql`
 query getOrganizationTotalRepositories {
   organization(login: "apollographql") {
+    id
     repositories(isFork: false) {
       totalCount
     }

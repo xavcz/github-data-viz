@@ -1,13 +1,11 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
 import styled from 'styled-components';
-
-import { GITHUB_ORG_TOTAL_REPOS } from './lib/graphql';
+import { pure, compose } from 'recompose';
 
 import Header from './Header';
 import FetchButton from './FetchButton';
 
-export const App = props => (
+export const AppPure = props => (
   <AppWrapper>
     <Header inline />
     <FetchButton />
@@ -21,4 +19,14 @@ export const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-export default graphql(GITHUB_ORG_TOTAL_REPOS)(App);
+// const displayLoadingState = branch(
+//   props => props.loading,
+//   renderComponent(withProps(() => ({ statusId: 'loading' }))(component))
+// );
+
+const App = compose(
+  // withTotalQuery,
+  pure
+)(AppPure);
+
+export default App;
