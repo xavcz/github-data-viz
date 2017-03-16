@@ -1,46 +1,24 @@
 import React from 'react';
-import { graphql, gql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import styled from 'styled-components';
+
+import { GITHUB_ORG_TOTAL_REPOS } from './lib/graphql';
 
 import Header from './Header';
+import FetchButton from './FetchButton';
 
-export const App = props => <Header inline />;
+export const App = props => (
+  <AppWrapper>
+    <Header inline />
+    <FetchButton />
+  </AppWrapper>
+);
 
-// Test query to GitHub GraphQL API, used to debug in the devtools at the moment
-const GITHUB_QUERY = gql`
-query getOrganizationData {
-  organization(login: "apollographql") {
-    id
-    repositories(last: 5, orderBy: {field: UPDATED_AT, direction: ASC}) {
-      edges {
-        repo: node {
-          id
-          name
-          updatedAt
-          pullRequests(last: 5, states: OPEN) {
-            edges {
-              pr: node {
-                id
-                title
-                url
-                updatedAt
-              }
-            }
-          }
-          issues(last: 5, states: OPEN) {
-            edges {
-              issue: node {
-                id
-                title
-                url
-                updatedAt
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+export const AppWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
-export default graphql(GITHUB_QUERY)(App);
+export default graphql(GITHUB_ORG_TOTAL_REPOS)(App);

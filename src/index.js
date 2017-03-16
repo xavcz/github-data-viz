@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo';
+import './lib/styles';
 import App from './App';
-import './index.css';
 
 // Init the network interface to send operations to the GitHub GraphQL API
 const networkInterface = createNetworkInterface({
