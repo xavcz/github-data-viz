@@ -58,7 +58,7 @@ const shimmer = keyframes`
 // Title with animated text color (grey stripe walking the text in 1.5s)
 export const shimmeringText = Component => {
   const ShimmeringComponent = styled(Component)`
-    animation: 1.5s linear 1 forwards ${shimmer};
+    animation: 1.5s linear 2 forwards ${shimmer};
     background: linear-gradient(to right, ${colors.white} 10%, ${colors.grey} 18%, ${colors.white} 26%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

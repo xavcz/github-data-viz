@@ -14,6 +14,7 @@ export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], wi
   
   return (
     <RepositoriesChart 
+      // TODO: create a hoc to handle these values from the props
       width={600}
       height={300}
       data={repositories}
@@ -66,14 +67,14 @@ export const GraphPlaceholder = shimmeringText(styled.div`
     padding-top: ${spacing.single};
     font-size: ${fonts.large};
     color: ${colors.grey}
-    content: "Drawing ${props => props.repositoriesTotal} repositories data...";
+    content: "Drawing ${props => props.repositoriesTotal} repositories...";
     display: flex;
     justify-content: center;
   }
 `);
 
 const withLoadingState = branch(
-  props => true,
+  props => props.loading,
   renderComponent(GraphPlaceholder)
 );
 

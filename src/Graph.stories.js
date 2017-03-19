@@ -14,5 +14,5 @@ const mockedData = [
 
 storiesOf('Graph', module)
   .add('loading graph', () => <GraphPlaceholder repositoriesTotal={42} />)
-  .add('bottom stacked data: issues', () => <GraphPure repositories={mockedData} stack={['pullRequests', 'issues']} />)
-  .add('bottom stacked data: pull requests', () => <GraphPure repositories={mockedData} stack={['issues', 'pullRequests']} />)
+  .add('default: bottom stacked data = issues', () => <GraphPure repositories={mockedData} />)
+  .add('alternative: bottom stacked data = prs', () => <GraphPure repositories={mockedData} stack={['issues', 'pullRequests']} />)
