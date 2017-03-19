@@ -68,6 +68,23 @@ export const shimmeringText = Component => {
   return props => <ShimmeringComponent {...props} />
 };
 
+export const shadowTransition = ({ start: backgroundColorStart, end: backgroundColorEnd }) => Component => {
+  
+  const ShadowComponent = styled(Component)`
+    background-color: ${backgroundColorStart};
+    background-image: linear-gradient(to bottom, ${backgroundColorStart} 0%, rgba(255,255,255,0) 100%);
+    box-shadow: 0 6px 15px ${colors.transparentGrey(0.08)};
+    transition: box-shadow 0.5s ${cubic.easeIn}, background-color 0.5s ${cubic.easeIn};
+    
+    &:hover {
+      box-shadow: 5px ${spacing.quarter} ${spacing.half} ${colors.transparentGrey(0.5)};
+      background-color: ${backgroundColorEnd};
+    }
+  `;
+  
+  return props => <ShadowComponent {...props} />
+}
+
 // CSS Resets
 // eslint-disable-next-line
 injectGlobal`

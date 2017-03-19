@@ -3,6 +3,6 @@ import { storiesOf } from '@kadira/storybook';
 
 import Header from './Header';
 
-storiesOf('Header', module)
+storiesOf('App.Header', module)
   .add('column display', () => <Header />)
   .add('inline display', () => <Header inline />);

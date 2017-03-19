@@ -10,7 +10,7 @@ statusList
   .reduce(
     (storiesOf, statusId) =>
       storiesOf.add(`${statusId} state`, () => <FetchButtonPure statusId={statusId} />),
-    storiesOf('FetchButton', module)
+    storiesOf('App.FetchButton', module)
   );
 
 // above code is equal to:

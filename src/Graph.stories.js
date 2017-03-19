@@ -12,7 +12,7 @@ const mockedData = [
   {id: 'f', name: 'apollo-angular', issues: 8, pullRequests: 6},
 ];
 
-storiesOf('Graph', module)
+storiesOf('App.Graph', module)
   .add('loading graph', () => <GraphPlaceholder repositoriesTotal={42} />)
   .add('default: bottom stacked data = issues', () => <GraphPure repositories={mockedData} />)
   .add('alternative: bottom stacked data = prs', () => <GraphPure repositories={mockedData} stack={['issues', 'pullRequests']} />)

@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
-import { colors, cubic } from './lib/styles';
+import { colors } from './lib/styles';
+
+import Card from './lib/Card';
 
 // component to display number of issueish with the right color & label
 const DataInfo = ({color, dataName, value}) => {
@@ -16,7 +18,7 @@ const DataInfo = ({color, dataName, value}) => {
 // component displayed when overing a stacked bar in the graph
 const RepositoryOverview = ({ repository: { id, name, ...data } }) => (
   <Card>
-    <CardTitle>{name}</CardTitle>
+    <RepositoryTitle>{name}</RepositoryTitle>
     {
       // from { issues: xxx, pullRequests: yyy }, map over ['issues', 'pullRequests']
       Object.keys(data).map(dataName => (
@@ -39,28 +41,7 @@ RepositoryOverview.propTypes = {
   }),
 };
 
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  padding: 20px;
-  background-color: ${colors.white};
-  background-image: linear-gradient(to bottom, ${colors.white} 0%, rgba(255,255,255,0) 100%);
-  box-shadow: 0 6px 15px ${colors.transparentGrey(0.08)};
-  border-radius: 16px;
-  overflow: hidden;
-  color: #333;
-  transition: box-shadow 0.5s ${cubic.easeIn}, background-color 0.5s ${cubic.easeIn};
-  
-  &:hover {
-    box-shadow: 5px 12px 20px ${colors.transparentGrey(0.5)};
-    background-color: ${colors.grey};
-  }
-`;
-
-const CardTitle = styled.h3`
+const RepositoryTitle = styled.h3`
   margin-top: 0;
   color: ${colors.gradientTop};
 `;
