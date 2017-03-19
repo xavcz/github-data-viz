@@ -48,7 +48,7 @@ export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], wi
 
 GraphPure.propTypes = {
   repositories: PropTypes.array,
-  repositoriesTotal: PropTypes.number,
+  totalRepositories: PropTypes.number,
   stack: PropTypes.array,
   width: PropTypes.number,
   height: PropTypes.number,
@@ -67,7 +67,7 @@ export const GraphPlaceholder = shimmeringText(styled.div`
     padding-top: ${spacing.single};
     font-size: ${fonts.large};
     color: ${colors.grey}
-    content: "Drawing ${props => props.repositoriesTotal} repositories...";
+    content: "Drawing ${props => props.totalRepositories} repositories...";
     display: flex;
     justify-content: center;
   }
@@ -80,10 +80,10 @@ const withLoadingState = branch(
 
 const withData = graphql(GITHUB_ORG_REPOS_DATA, {
   options: ({ reposCount }) => ({variables: { reposCount } }),
-  props: ({ data: { loading, organization }, ownProps: { repositoriesTotal } }) => ({
+  props: ({ data: { loading, organization }, ownProps: { totalRepositories } }) => ({
     loading,
     repositories: organization && organization.repositories && formatRepositoriesData(organization.repositories.nodes), 
-    repositoriesTotal,
+    totalRepositories,
   }),
 });
 

@@ -6,13 +6,13 @@ import Header from './Header';
 import FetchButton from './FetchButton';
 import Graph from './Graph';
 
-const withRepositoriesTotal = withState('repositoriesTotal', 'setRepositoriesTotal', 0);
+const withtotalRepositories = withState('totalRepositories', 'setTotalRepositories', 0);
 
-export const AppPure = ({ repositoriesTotal, setRepositoriesTotal }) => (
+export const AppPure = ({ totalRepositories, setTotalRepositories }) => (
   <AppWrapper>
     <Header inline />
-    <FetchButton setRepositoriesTotal={setRepositoriesTotal} />
-    {repositoriesTotal ? <Graph repositoriesTotal={repositoriesTotal} /> : null}
+    <FetchButton setTotalRepositories={setTotalRepositories} />
+    {totalRepositories ? <Graph totalRepositories={totalRepositories} /> : null}
   </AppWrapper>
 );
 
@@ -24,7 +24,7 @@ export const AppWrapper = styled.div`
 `;
 
 const App = compose(
-  withRepositoriesTotal,
+  withtotalRepositories,
   pure
 )(AppPure);
 

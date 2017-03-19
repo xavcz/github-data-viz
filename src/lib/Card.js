@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, shadowTransition } from './styles';
+import { colors, spacing, shadowTransition } from './styles';
 
 const transitionColors = {
   start: colors.white,
@@ -19,5 +19,29 @@ const Card = shadowTransition(transitionColors)(styled.div`
   overflow: hidden;
   color: ${colors.black};
 `);
+
+// note: this flex + svg could be abstracted in a hoc.
+export const CardTitle = styled.h3`
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  color: ${colors.gradientTop};
+  
+  svg {  
+    margin: 0 ${spacing.quarter};
+  }
+`;
+
+export const CardItem = styled.div`
+  display: flex;
+  align-items: center;
+  
+  svg {
+    &:not(:last-child) {
+      margin-right: ${spacing.quarter};
+    }
+    margin-left: ${spacing.quarter};
+  }
+`;
 
 export default Card;

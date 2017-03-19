@@ -18,7 +18,7 @@ export const statusList = [
 // control the button status thanks to a setStatus event handler
 const withStatusControl = withState('statusId', 'setStatus', 'init');
 
-export const FetchButtonPure = ({ client, statusId, setStatus, setRepositoriesTotal }) => {
+export const FetchButtonPure = ({ client, statusId, setStatus, setTotalRepositories }) => {
   const { icon: IconComponent, caption, disabled } = statusList.find(
     status => status.id === statusId
   );
@@ -30,7 +30,7 @@ export const FetchButtonPure = ({ client, statusId, setStatus, setRepositoriesTo
     
     return client.query({query: GITHUB_ORG_TOTAL_REPOS})
           .then(org => {
-            setRepositoriesTotal(org.data.organization.repositories.totalCount);
+            setTotalRepositories(org.data.organization.repositories.totalCount);
             setStatus('populating');
           })
           .catch(error => {
@@ -54,7 +54,7 @@ FetchButtonPure.propTypes = {
   client: PropTypes.any,
   statusId: PropTypes.oneOf(statusList.map(status => status.id)),
   setStatus: PropTypes.func, 
-  setRepositoriesTotal: PropTypes.func,
+  setTotalRepositories: PropTypes.func,
 };
 
 const FetchButton = compose(
