@@ -1,0 +1,18 @@
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+
+import { GraphPure, GraphPlaceholder } from './Graph';
+
+const mockedData = [
+  {id: 'a', name: 'apollo-client', issues: 101, pullRequests: 8},
+  {id: 'b', name: 'react-apollo', issues: 70, pullRequests: 5},
+  {id: 'c', name: 'frontpage-server', issues: 3, pullRequests: 15},
+  {id: 'd', name: 'apollo-client-devtools', issues: 12, pullRequests: 1},
+  {id: 'e', name: 'core-docs', issues: 45, pullRequests: 3},
+  {id: 'f', name: 'apollo-angular', issues: 8, pullRequests: 6},
+];
+
+storiesOf('Graph', module)
+  .add('loading graph', () => <GraphPlaceholder repositoriesTotal={42} />)
+  .add('bottom stacked data: issues', () => <GraphPure repositories={mockedData} stack={['pullRequests', 'issues']} />)
+  .add('bottom stacked data: pull requests', () => <GraphPure repositories={mockedData} stack={['issues', 'pullRequests']} />)

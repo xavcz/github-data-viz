@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import { MarkGithubIcon, HubotIcon, RepoPullIcon, RepoCloneIcon, BugIcon } from 'react-octicons-svg';
 import { withApollo } from 'react-apollo';
-import { /*withProps, branch, renderComponent,*/ withState, pure, compose } from 'recompose';
+import { withState, pure, compose } from 'recompose';
 
 import { colors, spacing, fonts, cubic } from './lib/styles';
 import { GITHUB_ORG_TOTAL_REPOS } from './lib/queries';
@@ -19,7 +19,7 @@ export const statusList = [
 // control the button status thanks to a setStatus event handler
 const withStatusControl = withState('statusId', 'setStatus', 'init');
 
-export const FetchButtonPure = ({ client, statusId, setStatus }) => {
+export const FetchButtonPure = ({ client, statusId, setStatus, setRepositoriesTotal }) => {
   const { icon: IconComponent, caption, disabled } = statusList.find(
     status => status.id === statusId
   );
@@ -30,13 +30,13 @@ export const FetchButtonPure = ({ client, statusId, setStatus }) => {
     setStatus('loading');
     
     return client.query({query: GITHUB_ORG_TOTAL_REPOS})
-          .then(result => {
-            setStatus('populating')
-            console.log('🚀', result);
+          .then(org => {
+            setRepositoriesTotal(org.data.organization.repositories.totalCount);
+            setStatus('populating');
           })
           .catch(error => {
             setStatus('error');
-            console.error('Something bad happened... Is the query correct or the GitHub GraphQL API down? :(\nHere is the error', error);
+            console.error('Something bad happened... Is the query correct or the GitHub GraphQL API down? :(', error);
           });
   };
 
@@ -50,6 +50,8 @@ export const FetchButtonPure = ({ client, statusId, setStatus }) => {
 FetchButtonPure.propTypes = {
   client: PropTypes.any,
   statusId: PropTypes.oneOf(statusList.map(status => status.id)),
+  setStatus: PropTypes.func, 
+  setRepositoriesTotal: PropTypes.func,
 };
 
 const Button = styled.button`

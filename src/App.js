@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { pure, compose } from 'recompose';
+import { withState, pure, compose } from 'recompose';
 
 import Header from './Header';
 import FetchButton from './FetchButton';
+import Graph from './Graph';
 
-export const AppPure = props => (
+const withRepositoriesTotal = withState('repositoriesTotal', 'setRepositoriesTotal', 0);
+
+export const AppPure = ({ repositoriesTotal, setRepositoriesTotal }) => (
   <AppWrapper>
     <Header inline />
-    <FetchButton />
+    <FetchButton setRepositoriesTotal={setRepositoriesTotal} />
+    {repositoriesTotal ? <Graph repositoriesTotal={repositoriesTotal} /> : null}
   </AppWrapper>
 );
 
@@ -19,13 +23,8 @@ export const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-// const displayLoadingState = branch(
-//   props => props.loading,
-//   renderComponent(withProps(() => ({ statusId: 'loading' }))(component))
-// );
-
 const App = compose(
-  // withTotalQuery,
+  withRepositoriesTotal,
   pure
 )(AppPure);
 

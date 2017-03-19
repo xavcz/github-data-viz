@@ -5,6 +5,8 @@ import { gql } from 'react-apollo';
 
 export const GITHUB_ORG_TOTAL_REPOS = gql`
 query getOrganizationTotalRepositories {
+  # the name of the organization could be passed as a variable,
+  # however that's not the point of this experiment
   organization(login: "apollographql") {
     id
     repositories(isFork: false) {
@@ -15,18 +17,22 @@ query getOrganizationTotalRepositories {
 `;
 
 export const GITHUB_ORG_REPOS_DATA = gql`
-query getRepositoriesData($reposCount: Float) {
+query getRepositoriesData($reposCount: Int) {
+  # the name of the organization could be passed as a variable,
+  # however that's not the point of this experiment
   organization(login: "apollographql") {
-    path
-    repositories(last: $reposCount, orderBy: {field: PUSHED_AT, direction: ASC}) {
+    id
+    repositories(last: $reposCount, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
       nodes {
         id
         name
-        updatedAt
-        pushedAt
+        # we don't really care about the pull requests data in themselves,
+        # we are looking for the total count, however github enforces to at least 
+        # specify a last/first
         pullRequests(last: 1, states: OPEN) {
           totalCount
         }
+        # same as pull requests, we are looking for the total count
         issues(last: 1, states: OPEN) {
           totalCount
         }

@@ -1,8 +1,5 @@
-import { injectGlobal, css } from 'styled-components';
-
-/*
- * Global styles, inspired by Sacha Greif
- */
+import React from 'react';
+import styled, { injectGlobal, css, keyframes } from 'styled-components';
 
 export const fonts = {
   extralarge: '4em',
@@ -19,6 +16,8 @@ export const colors = {
   transparentGrey: (a = 0.4) => `rgba(36,37,38,${a})`,
   gradientTop: '#2b3658',
   gradientBottom: '#523e5b',
+  issues: '#82ca9d',
+  pullRequests: '#8884d8',
 };
 
 export const spacing = {
@@ -49,6 +48,24 @@ export const large = (...args) => css`
 export const cubic = {
   easeOut: 'cubic-bezier(0, 0, 0.58, 1)', 
   easeIn: 'cubic-bezier(0.42, 0, 1, 1)',
+};
+
+const shimmer = keyframes`
+  from { background-position: -500px 0 }
+  to { background-position: 500px 0 }
+`;
+
+// Title with animated text color (grey stripe walking the text in 1.5s)
+export const shimmeringText = Component => {
+  const ShimmeringComponent = styled(Component)`
+    animation: 1.5s linear 1 forwards ${shimmer};
+    background: linear-gradient(to right, ${colors.white} 10%, ${colors.grey} 18%, ${colors.white} 26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 1000px 2em;
+  `;
+  
+  return props => <ShimmeringComponent {...props} />
 };
 
 // CSS Resets
