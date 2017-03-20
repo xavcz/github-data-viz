@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { graphql } from 'react-apollo';
-import { withState, pure, compose } from 'recompose';
+import { pure, compose } from 'recompose';
 
 import { GITHUB_ORG_REPOS_DATA } from './lib/queries';
 import formatRepositoriesData from './lib/visualization';
@@ -10,12 +10,8 @@ import RepositoryOverview from './RepositoryOverview';
 import Graph from './Graph';
 import GlobalOverview from './GlobalOverview';
 
-const GraphContainer = ({ totalRepositories, loading, repositories, repository, selectRepository })  => (
+const GraphContainer = ({ totalRepositories, loading, repositories, repository, selectRepository }) => (
   <FlexWrapper>
-    <RepositoryOverview
-      loading={loading}
-      repository={repository}
-    />
     <Graph 
       loading={loading}
       repositories={repositories}
@@ -45,18 +41,20 @@ GraphContainer.propTypes = {
 };
 
 const withData = graphql(GITHUB_ORG_REPOS_DATA, {
-  options: ({ reposCount }) => ({variables: { reposCount } }),
-  props: ({ data: { loading, organization }, ownProps: { totalRepositories } }) => ({
+  options: ({ totalRepositories }) => ({ variables: { totalRepositories } }),
+  props: ({ 
+    data: { loading, organization }, 
+    ownProps: { totalRepositories, selectRepository } 
+  }) => ({
     loading,
+    // format repositories directly, so "the props are ready-to-use"
     repositories: organization && organization.repositories && formatRepositoriesData(organization.repositories.nodes), 
-    totalRepositories,
+    totalRepositories, 
+    selectRepository,
   }),
 });
 
-const withSelectedBar = withState('repository', 'selectRepository', null);
-
 export default compose(
   withData,
-  withSelectedBar,
   pure,
 )(GraphContainer);

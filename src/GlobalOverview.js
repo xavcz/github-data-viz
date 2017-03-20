@@ -8,7 +8,7 @@ import { colors, spacing } from './lib/styles';
 const GlobalOverview = ({ displayedRepositories, totalRepositories }) => (
   <Card>
     <CardItem>The <GraphIcon /> displays {displayedRepositories} <RepoCloneIcon />.</CardItem>
-    <CardItem>{totalRepositories - displayedRepositories} <RepoCloneIcon /> are hidden: they don't have issueish data <PulseIcon />.</CardItem>
+    <CardItem>{totalRepositories - displayedRepositories} <RepoCloneIcon /> are hidden as they don't have issueish data <PulseIcon />.</CardItem>
     <CardItem>The <IssueOpenedIcon /> for each <RepoIcon /> are displayed in <ColorBlock color={colors.issues} /> on the <GraphIcon />.</CardItem>
     <CardItem>The <GitPullRequestIcon /> for each <RepoIcon /> are displayed in <ColorBlock color={colors.pullRequests} /> on the <GraphIcon />.</CardItem>
   </Card>

@@ -17,12 +17,12 @@ query getOrganizationTotalRepositories {
 `;
 
 export const GITHUB_ORG_REPOS_DATA = gql`
-query getRepositoriesData($reposCount: Int) {
+query getRepositoriesData($totalRepositories: Int) {
   # the name of the organization could be passed as a variable,
   # however that's not the point of this experiment
   organization(login: "apollographql") {
     id
-    repositories(last: $reposCount, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
+    repositories(last: $totalRepositories, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
       nodes {
         id
         name

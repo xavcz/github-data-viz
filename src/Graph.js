@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { BarChart, Bar } from 'recharts';
-import { branch, renderComponent, pure, compose } from 'recompose';
+import { lifecycle, branch, renderComponent, pure, compose } from 'recompose';
 import styled from 'styled-components';
 
 import { spacing, colors, shimmeringText } from './lib/styles';
@@ -72,8 +72,15 @@ const withLoadingState = branch(
   renderComponent(GraphPlaceholder)
 );
 
+const triggerPopulated = lifecycle({
+  componentDidMount() {
+    this.props.selectRepository(null);
+  }
+})
+
 const Graph = compose(
   withLoadingState,
+  triggerPopulated,
   pure,
 )(GraphPure);
 
