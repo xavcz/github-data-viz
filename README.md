@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/xavcz/github-data-viz.svg?branch=master)](https://travis-ci.org/xavcz/github-data-viz)
 
-### GitHub Data Visualization
+# GitHub Data Visualization
 
-:octocat:
-This small app is: 
+### What's up?
+Display Apollo Graphql organization repositories issueish data: open issues / pull requests on each repositories.
+
+### App guts 
 - build with React with only functional component + recompose
 - consumes GitHub GraphQL API thanks to `react-apollo`
 - styled with`styled-components`
