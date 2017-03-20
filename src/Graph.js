@@ -75,7 +75,10 @@ const withLoadingState = branch(props => props.loading, renderComponent(GraphPla
 
 const triggerPopulated = lifecycle({
   componentDidMount() {
-    this.props.selectRepository(null);
+    // note: check if is selectRepository exists, as it'll be undefined in storybook
+    if (this.props.selectRepository) {
+      this.props.selectRepository(null);
+    }
   },
 });
 
