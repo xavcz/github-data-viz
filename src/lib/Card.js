@@ -14,10 +14,10 @@ const Card = shadowTransition(transitionColors)(styled.div`
   width: 100%;
   max-width: 600px;
   padding: 20px;
-  
   border-radius: 16px;
   overflow: hidden;
   color: ${colors.black};
+  margin: ${spacing.quarter} 0;
 `);
 
 // note: this flex + svg could be abstracted in a hoc.

@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
-import { graphql } from 'react-apollo';
 import { BarChart, Bar } from 'recharts';
 import { branch, renderComponent, pure, compose } from 'recompose';
 import styled from 'styled-components';
 
-import { spacing, fonts, colors, shimmeringText } from './lib/styles';
-import { GITHUB_ORG_REPOS_DATA } from './lib/queries';
-import formatRepositoriesData from './lib/visualization';
+import { spacing, colors, shimmeringText } from './lib/styles';
 
-export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], width, height }) => {
+export const GraphPure = ({ selectRepository, repositories, stack = ['pullRequests', 'issues'], width, height }) => {
   
   const [ stackUp, stackBottom ] = stack;
+  
+  // "filter" the data registered in the state for the selected repository
+  const handleSelectRepository = ({ id, name, issues, pullRequests }) => selectRepository({ id, name, issues, pullRequests });
   
   return (
     <RepositoriesChart 
@@ -28,10 +28,11 @@ export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], wi
       <Bar 
         dataKey={stackUp} 
         stackId="issueish" 
-        fill={colors[stackUp]} 
+        fill={colors[stackUp]}
         animationBegin={400} 
         animationDuration={400} 
-        animationEasing="linear" 
+        animationEasing="linear"
+        onMouseEnter={handleSelectRepository}
       />
       <Bar
         dataKey={stackBottom}
@@ -39,6 +40,7 @@ export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], wi
         animationBegin={0}
         animationDuration={400}
         animationEasing="linear"
+        onMouseEnter={handleSelectRepository}
         fillOpacity={1}
         fill="url(#stackBottom)"
       />
@@ -48,29 +50,21 @@ export const GraphPure = ({ repositories, stack = ['pullRequests', 'issues'], wi
 
 GraphPure.propTypes = {
   repositories: PropTypes.array,
-  totalRepositories: PropTypes.number,
   stack: PropTypes.array,
   width: PropTypes.number,
   height: PropTypes.number,
+  selectRepository: PropTypes.func,
 };
 
 const RepositoriesChart = styled(BarChart)`
   border-bottom: 2px dashed ${colors.grey};
+  margin-bottom: ${spacing.half};
 `;
 
 export const GraphPlaceholder = shimmeringText(styled.div`
   width: 600px;
   height: 300px;
   border-bottom: 2px dashed ${colors.grey};
-  
-  &:after {
-    padding-top: ${spacing.single};
-    font-size: ${fonts.large};
-    color: ${colors.grey}
-    content: "Drawing ${props => props.totalRepositories} repositories...";
-    display: flex;
-    justify-content: center;
-  }
 `);
 
 const withLoadingState = branch(
@@ -78,17 +72,7 @@ const withLoadingState = branch(
   renderComponent(GraphPlaceholder)
 );
 
-const withData = graphql(GITHUB_ORG_REPOS_DATA, {
-  options: ({ reposCount }) => ({variables: { reposCount } }),
-  props: ({ data: { loading, organization }, ownProps: { totalRepositories } }) => ({
-    loading,
-    repositories: organization && organization.repositories && formatRepositoriesData(organization.repositories.nodes), 
-    totalRepositories,
-  }),
-});
-
 const Graph = compose(
-  withData,
   withLoadingState,
   pure,
 )(GraphPure);

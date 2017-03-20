@@ -20,7 +20,7 @@ const Button = props => {
       
       display: flex;
       align-items: center;
-      margin: ${spacing.half};
+      margin: ${spacing.quarter} 0;
       border: 0;
       padding: ${spacing.quarter} ${spacing.half};
       border-radius: 99px;

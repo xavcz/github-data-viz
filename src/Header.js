@@ -23,13 +23,15 @@ const HeaderWrapper = styled.div`
   justify-content: center;
   align-items: center;
   ${props => !props.inline && 'flex-direction: column'};
-  margin-top: ${spacing.half};
+  margin: ${spacing.quarter} 0;
   color: ${colors.white};
 `;
 
 // Logo stylings depending on inline or not
 const Logo = styled.img`
   ${props => props.inline && `margin-right: ${spacing.half};`};
+  ${props => props.inline && 'width: 64px;'}
+  ${props => props.inline && 'height: 64px;'}
 `;
 
 const Title = shimmeringText(styled.h1`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import { GraphPure, GraphPlaceholder } from './Graph';
+import Graph from './Graph';
 
 const mockedData = [
   {id: 'a', name: 'apollo-client', issues: 101, pullRequests: 8},
@@ -13,6 +13,6 @@ const mockedData = [
 ];
 
 storiesOf('App.Graph', module)
-  .add('loading graph', () => <GraphPlaceholder totalRepositories={42} />)
-  .add('default: bottom stacked data = issues', () => <GraphPure repositories={mockedData} />)
-  .add('alternative: bottom stacked data = prs', () => <GraphPure repositories={mockedData} stack={['issues', 'pullRequests']} />)
+  .add('graph placeholder', () => <Graph loading />)
+  .add('default: bottom stacked data = issues', () => <Graph repositories={mockedData} setSelectedBar={data => console.log(data)} />)
+  .add('alternative: bottom stacked data = prs', () => <Graph repositories={mockedData} stack={['issues', 'pullRequests']} setSelectedBar={data => console.log(data)} />)

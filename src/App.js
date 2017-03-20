@@ -1,27 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
 import { withState, pure, compose } from 'recompose';
 
+import FlexWrapper from './lib/FlexWrapper';
 import Header from './Header';
 import FetchButton from './FetchButton';
-import Graph from './Graph';
+import GraphContainer from './GraphContainer';
 
-const withtotalRepositories = withState('totalRepositories', 'setTotalRepositories', 0);
+const withtotalRepositories = withState('totalRepositories', 'setTotalRepositories', null);
 
 export const AppPure = ({ totalRepositories, setTotalRepositories }) => (
-  <AppWrapper>
+  <FlexWrapper>
     <Header inline />
     <FetchButton setTotalRepositories={setTotalRepositories} />
-    {totalRepositories ? <Graph totalRepositories={totalRepositories} /> : null}
-  </AppWrapper>
+    {totalRepositories && <GraphContainer totalRepositories={totalRepositories} />}
+  </FlexWrapper>
 );
-
-export const AppWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-`;
 
 const App = compose(
   withtotalRepositories,
