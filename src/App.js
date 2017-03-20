@@ -10,49 +10,46 @@ import RepositoryOverview from './RepositoryOverview';
 
 import { GITHUB_ORG_TOTAL_REPOS } from './lib/queries';
 
-export const AppPure = ({ 
-  loading,
-  error,
-  totalRepositories, 
-  repository, 
-  selectRepository, 
-  currentStatus 
-}) => (
+export const AppPure = (
+  {
+    loading,
+    error,
+    totalRepositories,
+    repository,
+    selectRepository,
+    currentStatus,
+  }
+) => (
   <FlexWrapper>
     <Header inline />
-    <StatusButton
-      currentStatus={currentStatus}
-      repository={repository}
-    />
-    {totalRepositories 
-      ? <div> 
+    <StatusButton currentStatus={currentStatus} repository={repository} />
+    {totalRepositories
+      ? <div>
           <RepositoryOverview
             currentStatus={currentStatus}
             repository={repository}
             totalRepositories={totalRepositories}
           />
-          <GraphContainer 
+          <GraphContainer
             selectRepository={selectRepository}
-            totalRepositories={totalRepositories} 
+            totalRepositories={totalRepositories}
           />
         </div>
-      : null
-    }
+      : null}
   </FlexWrapper>
 );
 
 // get the total number of repositories of the organization
 // note: organization's repositories pagination is broken on the gh graphql api
-const withTotalRepositories = graphql(
-  GITHUB_ORG_TOTAL_REPOS, 
-  {
-    props: ({ data: { loading, error, organization, refetch } }) => ({
-      loading,
-      error,
-      totalRepositories: organization && organization.repositories && organization.repositories.totalCount,
-    }),
-  },
-);
+const withTotalRepositories = graphql(GITHUB_ORG_TOTAL_REPOS, {
+  props: ({ data: { loading, error, organization, refetch } }) => ({
+    loading,
+    error,
+    totalRepositories: organization &&
+      organization.repositories &&
+      organization.repositories.totalCount,
+  }),
+});
 
 // default value: undefined.
 // once the graph is populated, we set it to null
@@ -63,27 +60,22 @@ const withSelectedRepo = withState('repository', 'selectRepository');
 const withAutomaticStatus = withProps(props => {
   // something bad happened
   if (props.error) return { ...props, currentStatus: 'error' };
-  
+
   // loading the organization total repositories
   if (props.loading) return { ...props, currentStatus: 'loading' };
-  
+
   // a repository is selected
-  if (props.repository) return { ...props, currentStatus: 'check-repo'};
-  
+  if (props.repository) return { ...props, currentStatus: 'check-repo' };
+
   // total repositories data have been loaded
   if (props.totalRepositories) {
     // when the graph is populated, we manually set to `null` the selected repository
-    // note: it could be also be done with a specific method like `graphPopulated` 
-    const currentStatus = props.repository === null ? 'populated' : 'populating'; 
+    // note: it could be also be done with a specific method like `graphPopulated`
+    const currentStatus = props.repository === null ? 'populated' : 'populating';
     return { ...props, currentStatus };
   }
 });
 
-const App = compose(
-  withTotalRepositories,
-  withSelectedRepo,
-  withAutomaticStatus,
-  pure,
-)(AppPure);
+const App = compose(withTotalRepositories, withSelectedRepo, withAutomaticStatus, pure)(AppPure);
 
 export default App;

@@ -1,6 +1,13 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
-import { RepoIcon, RepoCloneIcon, IssueOpenedIcon, GitPullRequestIcon, GraphIcon, PulseIcon } from 'react-octicons-svg';
+import {
+  RepoIcon,
+  RepoCloneIcon,
+  IssueOpenedIcon,
+  GitPullRequestIcon,
+  GraphIcon,
+  PulseIcon,
+} from 'react-octicons-svg';
 
 import Card, { CardItem } from './lib/Card';
 import { colors, spacing } from './lib/styles';

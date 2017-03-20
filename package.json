@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-deployer": "^1.2.0",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "prettier": "prettier --write \"src/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
   }
 }

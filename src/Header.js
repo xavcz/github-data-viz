@@ -34,8 +34,10 @@ const Logo = styled.img`
   ${props => props.inline && 'height: 64px;'}
 `;
 
-const Title = shimmeringText(styled.h1`
+const Title = shimmeringText(
+  styled.h1`
   margin: ${spacing.half} 0;
-`);
+`
+);
 
 export default Header;

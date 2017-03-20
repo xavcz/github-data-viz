@@ -1,19 +1,21 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { BarChart, Bar } from 'recharts';
 import { lifecycle, branch, renderComponent, pure, compose } from 'recompose';
 import styled from 'styled-components';
 
 import { spacing, colors, shimmeringText } from './lib/styles';
 
-export const GraphPure = ({ selectRepository, repositories, stack = ['pullRequests', 'issues'], width, height }) => {
-  
-  const [ stackUp, stackBottom ] = stack;
-  
+export const GraphPure = (
+  { selectRepository, repositories, stack = ['pullRequests', 'issues'], width, height }
+) => {
+  const [stackUp, stackBottom] = stack;
+
   // "filter" the data registered in the state for the selected repository
-  const handleSelectRepository = ({ id, name, issues, pullRequests }) => selectRepository({ id, name, issues, pullRequests });
-  
+  const handleSelectRepository = ({ id, name, issues, pullRequests }) =>
+    selectRepository({ id, name, issues, pullRequests });
+
   return (
-    <RepositoriesChart 
+    <RepositoriesChart
       // TODO: create a hoc to handle these values from the props
       width={600}
       height={300}
@@ -21,16 +23,16 @@ export const GraphPure = ({ selectRepository, repositories, stack = ['pullReques
     >
       <defs>
         <linearGradient id="stackBottom" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="5%" stopColor={colors[stackBottom]} stopOpacity={0.8}/>
-          <stop offset="95%" stopColor={colors[stackBottom]} stopOpacity={0}/>
+          <stop offset="5%" stopColor={colors[stackBottom]} stopOpacity={0.8} />
+          <stop offset="95%" stopColor={colors[stackBottom]} stopOpacity={0} />
         </linearGradient>
       </defs>
-      <Bar 
-        dataKey={stackUp} 
-        stackId="issueish" 
+      <Bar
+        dataKey={stackUp}
+        stackId="issueish"
         fill={colors[stackUp]}
-        animationBegin={400} 
-        animationDuration={400} 
+        animationBegin={400}
+        animationDuration={400}
         animationEasing="linear"
         onMouseEnter={handleSelectRepository}
       />
@@ -61,27 +63,22 @@ const RepositoriesChart = styled(BarChart)`
   margin-bottom: ${spacing.half};
 `;
 
-export const GraphPlaceholder = shimmeringText(styled.div`
+export const GraphPlaceholder = shimmeringText(
+  styled.div`
   width: 600px;
   height: 300px;
   border-bottom: 2px dashed ${colors.grey};
-`);
-
-const withLoadingState = branch(
-  props => props.loading,
-  renderComponent(GraphPlaceholder)
+`
 );
+
+const withLoadingState = branch(props => props.loading, renderComponent(GraphPlaceholder));
 
 const triggerPopulated = lifecycle({
   componentDidMount() {
     this.props.selectRepository(null);
-  }
-})
+  },
+});
 
-const Graph = compose(
-  withLoadingState,
-  triggerPopulated,
-  pure,
-)(GraphPure);
+const Graph = compose(withLoadingState, triggerPopulated, pure)(GraphPure);
 
 export default Graph;
