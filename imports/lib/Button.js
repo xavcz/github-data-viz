@@ -30,7 +30,7 @@ const Button = props => {
       cursor: pointer;
     `
   );
-  
+
   return <ShadowButton {...props} />;
 };
 

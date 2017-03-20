@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo';
+import { Meteor } from 'meteor/meteor';
 import '/imports/lib/styles';
 import App from '/imports/App';
 

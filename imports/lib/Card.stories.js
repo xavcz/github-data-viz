@@ -1,8 +1,8 @@
 import React from 'react';
-import { storiesOf, addDecorator } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 
 import Card, { CardTitle } from './Card';
 
 storiesOf('Lib.Card', module)
   .add('simple', () => <Card>Yay</Card>)
-  .add('with title', () => <Card><CardTitle>Oyoye</CardTitle><div>Nom nom nom</div></Card>)
+  .add('with title', () => <Card><CardTitle>Oyoye</CardTitle><div>Nom nom nom</div></Card>);

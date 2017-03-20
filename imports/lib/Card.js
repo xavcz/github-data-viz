@@ -3,10 +3,11 @@ import { colors, spacing, shadowTransition } from './styles';
 
 const transitionColors = {
   start: colors.white,
-  end: colors.grey
+  end: colors.grey,
 };
 
-const Card = shadowTransition(transitionColors)(styled.div`
+const Card = shadowTransition(transitionColors)(
+  styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,7 +19,8 @@ const Card = shadowTransition(transitionColors)(styled.div`
   overflow: hidden;
   color: ${colors.black};
   margin: ${spacing.quarter} 0;
-`);
+`
+);
 
 // note: this flex + svg could be abstracted in a hoc.
 export const CardTitle = styled.h3`

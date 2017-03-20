@@ -14,13 +14,7 @@ const mockedData = [
 
 storiesOf('App.Graph', module)
   .add('graph placeholder', () => <Graph loading />)
-  .add('default: bottom stacked data = issues', () => (
-    <Graph repositories={mockedData} setSelectedBar={data => console.log(data)} />
-  ))
+  .add('default: bottom stacked data = issues', () => <Graph repositories={mockedData} />)
   .add('alternative: bottom stacked data = prs', () => (
-    <Graph
-      repositories={mockedData}
-      stack={['issues', 'pullRequests']}
-      setSelectedBar={data => console.log(data)}
-    />
+    <Graph repositories={mockedData} stack={['issues', 'pullRequests']} />
   ));

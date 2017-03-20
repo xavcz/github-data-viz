@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { spacing, colors, shimmeringText } from './lib/styles';
 
 export const GraphPure = (
-  { selectRepository, repositories, stack = ['pullRequests', 'issues'], width, height }
+  { selectRepository, repositories, stack = ['pullRequests', 'issues'] }
 ) => {
   const [stackUp, stackBottom] = stack;
 
@@ -53,8 +53,6 @@ export const GraphPure = (
 GraphPure.propTypes = {
   repositories: PropTypes.array,
   stack: PropTypes.array,
-  width: PropTypes.number,
-  height: PropTypes.number,
   selectRepository: PropTypes.func,
 };
 

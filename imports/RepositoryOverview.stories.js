@@ -10,9 +10,7 @@ storiesOf('App.RepositoryOverview', module)
   .add('loading state', () => (
     <RepositoryOverview totalRepositories={42} currentStatus="populating" />
   ))
-  .add('populated', () => (
-    <RepositoryOverview currentStatus="populated" />
-  ))
+  .add('populated', () => <RepositoryOverview currentStatus="populated" />)
   .add('standard display', () => <RepositoryOverview repository={mockedRepository} />)
   .add('shouldnt have "s" at end of labels', () => (
     <RepositoryOverview repository={mockedRepository2} />

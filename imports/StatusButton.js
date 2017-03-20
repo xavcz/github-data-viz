@@ -20,7 +20,7 @@ export const StatusButtonPure = ({ currentStatus = 'loading', repository }) => {
 
   const handleClick = currentStatus === 'check-repo'
     ? () => window.location = `https://github.com/apollographql/${repository.name}`
-    : () => console.info('Look at the graph! \\o/');
+    : () => console.info('Look at the graph! \\o/'); // eslint-disable-line no-console
 
   return (
     <Button disabled={disabled} onClick={handleClick} big>

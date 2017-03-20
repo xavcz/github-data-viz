@@ -29,24 +29,24 @@ export const spacing = {
 
 export const small = (...args) => css`
   @media screen and (max-width: 600px) {
-    ${ css(...args) }
+    ${css(...args)}
   }
 `;
 
 export const medium = (...args) => css`
   @media screen and (min-width: 601px) and (max-width: 1200px) {
-    ${ css(...args) }
+    ${css(...args)}
   }
 `;
 
 export const large = (...args) => css`
   @media screen and (min-width: 1201px) {
-    ${ css(...args) }
+    ${css(...args)}
   }
 `;
 
 export const cubic = {
-  easeOut: 'cubic-bezier(0, 0, 0.58, 1)', 
+  easeOut: 'cubic-bezier(0, 0, 0.58, 1)',
   easeIn: 'cubic-bezier(0.42, 0, 1, 1)',
 };
 
@@ -64,12 +64,17 @@ export const shimmeringText = Component => {
     -webkit-text-fill-color: transparent;
     background-size: 1000px 2em;
   `;
-  
-  return props => <ShimmeringComponent {...props} />
+
+  // eslint-disable-next-line
+  return props => <ShimmeringComponent {...props} />;
 };
 
-export const shadowTransition = ({ start: backgroundColorStart, end: backgroundColorEnd }) => Component => {
-  
+export const shadowTransition = (
+  {
+    start: backgroundColorStart,
+    end: backgroundColorEnd,
+  }
+) => Component => {
   const ShadowComponent = styled(Component)`
     background-color: ${backgroundColorStart};
     background-image: linear-gradient(to bottom, ${backgroundColorStart} 0%, rgba(255,255,255,0) 100%);
@@ -81,9 +86,10 @@ export const shadowTransition = ({ start: backgroundColorStart, end: backgroundC
       background-color: ${backgroundColorEnd};
     }
   `;
-  
-  return props => <ShadowComponent {...props} />
-}
+
+  // eslint-disable-next-line
+  return props => <ShadowComponent {...props} />;
+};
 
 // CSS Resets
 // eslint-disable-next-line

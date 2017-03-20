@@ -3,7 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0"
+    "@kadira/storybook": "^2.21.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.17.1",
+    "eslint-import-resolver-meteor": "^0.3.3",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-meteor": "4.0.0",
+    "eslint-plugin-no-unused-vars-rest": "^1.0.4",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.0",
+    "prettier": "^0.20.0"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
@@ -18,7 +27,9 @@
   },
   "scripts": {
     "start": "meteor --settings settings.json",
-    "prettier": "prettier --write \"src/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
+    "lint": "eslint --quiet --ext .js .",
+    "prettier": "prettier --write \"imports/**/*.js\" \"client/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
+    "test": "npm run lint",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o .out"
   }

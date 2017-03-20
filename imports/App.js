@@ -12,8 +12,6 @@ import { GITHUB_ORG_TOTAL_REPOS } from './lib/queries';
 
 export const AppPure = (
   {
-    loading,
-    error,
     totalRepositories,
     repository,
     selectRepository,
@@ -42,7 +40,7 @@ export const AppPure = (
 // get the total number of repositories of the organization
 // note: organization's repositories pagination is broken on the gh graphql api
 const withTotalRepositories = graphql(GITHUB_ORG_TOTAL_REPOS, {
-  props: ({ data: { loading, error, organization, refetch } }) => ({
+  props: ({ data: { loading, error, organization } }) => ({
     loading,
     error,
     totalRepositories: organization &&

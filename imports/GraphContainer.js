@@ -9,9 +9,7 @@ import FlexWrapper from './lib/FlexWrapper';
 import Graph from './Graph';
 import GlobalOverview from './GlobalOverview';
 
-const GraphContainer = (
-  { totalRepositories, loading, repositories, repository, selectRepository }
-) => (
+const GraphContainer = ({ totalRepositories, loading, repositories, selectRepository }) => (
   <FlexWrapper>
     <Graph loading={loading} repositories={repositories} selectRepository={selectRepository} />
     {!loading &&
@@ -26,12 +24,6 @@ GraphContainer.propTypes = {
   totalRepositories: PropTypes.number,
   loading: PropTypes.bool,
   repositories: PropTypes.array,
-  repository: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    issues: PropTypes.number,
-    pullRequests: PropTypes.number,
-  }),
   selectRepository: PropTypes.func,
 };
 
