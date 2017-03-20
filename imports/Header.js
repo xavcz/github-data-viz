@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import { spacing, colors, shimmeringText } from './lib/styles';
 
 // SVG imported like this to avoid storybook to complain about missing file
-const svgLogo = `${process.env.PUBLIC_URL}/logo.svg`;
 
 const Header = ({ inline }) => (
   <HeaderWrapper inline={inline}>
-    <Logo src={svgLogo} alt="Apollo" inline={inline} />
+    <Logo src="/logo.svg" alt="Apollo" inline={inline} />
     <Title>Apollo Github Organization</Title>
   </HeaderWrapper>
 );

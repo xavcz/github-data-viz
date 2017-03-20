@@ -3,13 +3,20 @@
 ### GitHub Data Visualization
 
 :octocat:
+This small app is: 
+- build with React with only functional component + recompose
+- consumes GitHub GraphQL API thanks to `react-apollo`
+- styled with`styled-components`
+- powered with Meteor
 
-Data visualization using React, Apollo Client, GitHub GraphQL API & `styled-components` :rocket:
+Create a `settings.json` file at the root of the project & add [your own GitHub Token](https://github.com/settings/tokens) with at least `read:org` access to the file:
 
-Create a `.env` file at the root of the project & add [your own GitHub Token](https://github.com/settings/tokens) with at least `read:org` access to the file:
-
-```
-REACT_APP_GITHUB_TOKEN=xxx
+```json
+{
+  "public": {
+    "GITHUB_TOKEN": "xxx"
+  }
+}
 ```
 
 ```sh

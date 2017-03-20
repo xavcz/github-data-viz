@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
-    "@kadira/storybook-deployer": "^1.2.0",
-    "react-scripts": "0.9.5"
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4",
     "react": "^15.4.2",
     "react-apollo": "^1.0.0-rc.3",
     "react-dom": "^15.4.2",
@@ -17,13 +17,9 @@
     "styled-components": "^1.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "meteor --settings settings.json",
     "prettier": "prettier --write \"src/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build-storybook": "build-storybook -s public -o .out"
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { configure, addDecorator } from '@kadira/storybook';
-import '../src/lib/styles';
+import '../imports/lib/styles';
 
 // require all stories dynamically \o/
-const req = require.context('../src', true, /.stories.js$/)
+const req = require.context('../imports', true, /.stories.js$/)
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))

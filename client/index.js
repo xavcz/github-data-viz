@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo';
-import './lib/styles';
-import App from './App';
+import '/imports/lib/styles';
+import App from '/imports/App';
 
 // Init the network interface to send operations to the GitHub GraphQL API
 const networkInterface = createNetworkInterface({
@@ -16,7 +16,7 @@ networkInterface.use([
       if (!req.options.headers) {
         req.options.headers = {};
       }
-      req.options.headers['authorization'] = `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`;
+      req.options.headers['authorization'] = `Bearer ${Meteor.settings.public.GITHUB_TOKEN}`;
       next();
     },
   },
