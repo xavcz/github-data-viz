@@ -1,3 +1,7 @@
+> :dizzy_face: Github GraphQL API Bug: The API was working well until few days ago, thread about the issue: https://platform.github.community/t/something-went-wrong-while-executing-your-query-this-is-most-likely-a-github-bug/1521/5?u=xavcz
+
+:octocat:
+
 [![Build Status](https://travis-ci.org/xavcz/github-data-viz.svg?branch=master)](https://travis-ci.org/xavcz/github-data-viz)
 
 # GitHub Data Visualization
