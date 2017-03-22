@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
 import { graphql } from 'react-apollo';
-import { pure, compose } from 'recompose';
+import { branch, renderComponent, pure, compose } from 'recompose';
+import { BugIcon } from 'react-octicons-svg';
 
 import { GITHUB_ORG_REPOS_DATA } from './lib/queries';
 import formatRepositoriesData from './lib/visualization';
 
+import Card, { CardTitle } from './lib/Card';
 import FlexWrapper from './lib/FlexWrapper';
 import Graph from './Graph';
 import GlobalOverview from './GlobalOverview';
@@ -31,11 +33,12 @@ const withData = graphql(GITHUB_ORG_REPOS_DATA, {
   options: ({ totalRepositories }) => ({ variables: { totalRepositories } }),
   props: (
     {
-      data: { loading, organization },
+      data: { loading, organization, error },
       ownProps: { totalRepositories, selectRepository },
     }
   ) => ({
     loading,
+    error,
     // format repositories directly, so "the props are ready-to-use"
     repositories: organization &&
       organization.repositories &&
@@ -45,4 +48,14 @@ const withData = graphql(GITHUB_ORG_REPOS_DATA, {
   }),
 });
 
-export default compose(withData, pure)(GraphContainer);
+const withError = branch(
+  props => props.error,
+  renderComponent(props => (
+    <Card>
+      <CardTitle>Something went bad <BugIcon />...</CardTitle>
+      {props.error.message}
+    </Card>
+  ))
+);
+
+export default compose(withData, withError, pure)(GraphContainer);
