@@ -1,26 +1,34 @@
 import React, { PropTypes } from 'react';
 import { graphql } from 'react-apollo';
-import { branch, renderComponent, pure, compose } from 'recompose';
-import { BugIcon } from 'react-octicons-svg';
+import { pure, compose } from 'recompose';
 
 import { GITHUB_ORG_REPOS_DATA } from './lib/queries';
 import formatRepositoriesData from './lib/visualization';
+import hardcodedData from './lib/hardcodedData';
 
-import Card, { CardTitle } from './lib/Card';
 import FlexWrapper from './lib/FlexWrapper';
 import Graph from './Graph';
 import GlobalOverview from './GlobalOverview';
 
-const GraphContainer = ({ totalRepositories, loading, repositories, selectRepository }) => (
-  <FlexWrapper>
-    <Graph loading={loading} repositories={repositories} selectRepository={selectRepository} />
-    {!loading &&
-      <GlobalOverview
-        displayedRepositories={repositories.length}
-        totalRepositories={totalRepositories}
-      />}
-  </FlexWrapper>
-);
+const GraphContainer = ({ totalRepositories, loading, error, repositories, selectRepository }) => {
+  if (error) {
+    // eslint-disable-next-line
+    console.warn(
+      'The graph displays hardcoded data, got from GitHub GraphQL Explorer: the GitHub API has a bug at the moment. See thread: https://platform.github.community/t/something-went-wrong-while-executing-your-query-this-is-most-likely-a-github-bug/1521/5?u=xavcz'
+    );
+  }
+
+  return (
+    <FlexWrapper>
+      <Graph loading={loading} repositories={repositories} selectRepository={selectRepository} />
+      {!loading &&
+        <GlobalOverview
+          displayedRepositories={repositories.length}
+          totalRepositories={totalRepositories}
+        />}
+    </FlexWrapper>
+  );
+};
 
 GraphContainer.propTypes = {
   totalRepositories: PropTypes.number,
@@ -40,22 +48,14 @@ const withData = graphql(GITHUB_ORG_REPOS_DATA, {
     loading,
     error,
     // format repositories directly, so "the props are ready-to-use"
-    repositories: organization &&
-      organization.repositories &&
-      formatRepositoriesData(organization.repositories.nodes),
+    repositories: error
+      ? formatRepositoriesData(hardcodedData)
+      : organization &&
+          organization.repositories &&
+          formatRepositoriesData(organization.repositories.nodes),
     totalRepositories,
     selectRepository,
   }),
 });
 
-const withError = branch(
-  props => props.error,
-  renderComponent(props => (
-    <Card>
-      <CardTitle>Something went bad <BugIcon />...</CardTitle>
-      {props.error.message}
-    </Card>
-  ))
-);
-
-export default compose(withData, withError, pure)(GraphContainer);
+export default compose(withData, pure)(GraphContainer);
