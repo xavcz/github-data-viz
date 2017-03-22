@@ -24,6 +24,7 @@ const HeaderWrapper = styled.div`
   ${props => !props.inline && 'flex-direction: column'};
   margin: ${spacing.quarter} 0;
   color: ${colors.white};
+  text-align: center;
 `;
 
 // Logo stylings depending on inline or not

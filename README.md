@@ -38,6 +38,8 @@ yarn storybook
 ### What are the next steps to optimize the user experience?
 Here are some ideas:
 - Smoother transitions and motions thanks to `react-addons-transition-group` and/or `react-motion`.
+- Jest snapshots coupled with storybook
+- Handle mobile layout with media queries
 - Faster page load with server-side rendering by coupling `WebApp` & `react-apollo`.
 - Faster page load with dynamic imports `import(...)`.
 - More control over repositories data : infos about opened issues / PRs, ability to preview them.
