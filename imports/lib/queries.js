@@ -23,18 +23,16 @@ query getRepositoriesData($totalRepositories: Int) {
   organization(login: "apollographql") {
     id
     repositories(last: $totalRepositories, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
-      nodes {
-        id
-        name
-        # we don't really care about the pull requests data in themselves,
-        # we are looking for the total count, however github enforces to at least 
-        # specify a last/first
-        pullRequests(last: 1, states: OPEN) {
-          totalCount
-        }
-        # same as pull requests, we are looking for the total count
-        issues(last: 1, states: OPEN) {
-          totalCount
+      edges {
+        node {
+          id
+          name
+          pullRequests(states: OPEN) {
+            totalCount
+          }
+          issues(states: OPEN) {
+            totalCount
+          }
         }
       }
     }
@@ -53,10 +51,10 @@ query getRepositoriesData($totalRepositories: Int) {
 //           id
 //           name
 //           updatedAt
-//           pullRequests(last: 1, states: OPEN) {
+//           pullRequests(states: OPEN) {
 //             totalCount
 //           }
-//           issues(last: 1, states: OPEN) {
+//           issues(states: OPEN) {
 //             totalCount
 //           }
 //         }

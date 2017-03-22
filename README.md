@@ -15,7 +15,7 @@ Display Apollo Graphql organization repositories issueish data: open issues / pu
 - styled with`styled-components`
 - powered with Meteor
 
-Create a `settings.json` file at the root of the project & add [your own GitHub Token](https://github.com/settings/tokens) with at least `read:org` access to the file:
+Create a `settings.json` file at the root of the project & add [your own GitHub Token](https://github.com/settings/tokens) with at least `repo` & `read:org` access to the file:
 
 ```json
 {

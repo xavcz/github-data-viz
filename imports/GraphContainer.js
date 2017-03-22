@@ -52,7 +52,8 @@ const withData = graphql(GITHUB_ORG_REPOS_DATA, {
       ? formatRepositoriesData(hardcodedData)
       : organization &&
           organization.repositories &&
-          formatRepositoriesData(organization.repositories.nodes),
+          organization.repositories.edges &&
+          formatRepositoriesData(organization.repositories.edges.nodes),
     totalRepositories,
     selectRepository,
   }),
