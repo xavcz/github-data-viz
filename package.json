@@ -32,7 +32,7 @@
     "prettier": "prettier --write \"imports/**/*.js\" \"client/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
     "test": "npm run lint",
     "storybook": "start-storybook -p 9009 -s public",
-    "test-storybook": "storyshots",
-    "build-storybook": "build-storybook -s public -o .out"
+    "storybook:test": "storyshots",
+    "storybook:build": "build-storybook -s public -o .out"
   }
 }
