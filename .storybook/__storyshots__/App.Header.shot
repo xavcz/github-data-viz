@@ -1,0 +1,27 @@
+exports[`column display`] = `
+<div
+  className="iWNfWG">
+  <img
+    alt="Apollo"
+    className="chDuEa"
+    src="/logo.svg" />
+  <h1
+    className="VmBbt">
+    Apollo Github Organization
+  </h1>
+</div>
+`;
+
+exports[`inline display`] = `
+<div
+  className="jlmgHm">
+  <img
+    alt="Apollo"
+    className="bPUPkY"
+    src="/logo.svg" />
+  <h1
+    className="VmBbt">
+    Apollo Github Organization
+  </h1>
+</div>
+`;

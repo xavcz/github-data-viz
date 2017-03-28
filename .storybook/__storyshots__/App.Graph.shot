@@ -1,0 +1,790 @@
+exports[`alternative: bottom stacked data = prs`] = `
+<div
+  className="recharts-wrapper fnYejN"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchMove={[Function]}
+  style={
+    Object {
+      "cursor": "default",
+      "height": 300,
+      "position": "relative",
+      "width": 600,
+    }
+  }>
+  <svg
+    className="recharts-surface"
+    height={300}
+    style={undefined}
+    version="1.1"
+    viewBox="0 0 600 300"
+    width={600}>
+    <g
+      className="recharts-layer recharts-bar-graphical">
+      <g
+        className="recharts-layer recharts-bar">
+        <g
+          className="recharts-layer recharts-bar-rectangles"
+          clipPath={null}>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "53.83333333333333px 275.6666666666667px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "53.83333333333333px 275.6666666666667px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "53.83333333333333px 275.6666666666667px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "53.83333333333333px 275.6666666666667px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "53.83333333333333px 275.6666666666667px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 14.833333333333332,31.583333333333314 h 78 v 244.08333333333337 h -78 Z"
+              fill="#82ca9d"
+              height={244.08333333333337}
+              width={78}
+              x={14.833333333333332}
+              y={31.583333333333314} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "152.16666666666666px 282.9166666666667px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "152.16666666666666px 282.9166666666667px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "152.16666666666666px 282.9166666666667px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "152.16666666666666px 282.9166666666667px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "152.16666666666666px 282.9166666666667px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 113.16666666666666,113.75 h 78 v 169.16666666666669 h -78 Z"
+              fill="#82ca9d"
+              height={169.16666666666669}
+              width={78}
+              x={113.16666666666666}
+              y={113.75} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "250.5px 258.75px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "250.5px 258.75px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "250.5px 258.75px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "250.5px 258.75px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "250.5px 258.75px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 211.5,251.5 h 78 v 7.25 h -78 Z"
+              fill="#82ca9d"
+              height={7.25}
+              width={78}
+              x={211.5}
+              y={251.5} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "348.8333333333333px 292.5833333333333px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "348.8333333333333px 292.5833333333333px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "348.8333333333333px 292.5833333333333px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "348.8333333333333px 292.5833333333333px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "348.8333333333333px 292.5833333333333px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 309.8333333333333,263.5833333333333 h 78 v 29 h -78 Z"
+              fill="#82ca9d"
+              height={29}
+              width={78}
+              x={309.8333333333333}
+              y={263.5833333333333} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "447.16666666666663px 287.75px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "447.16666666666663px 287.75px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "447.16666666666663px 287.75px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "447.16666666666663px 287.75px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "447.16666666666663px 287.75px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 408.16666666666663,179 h 78 v 108.75 h -78 Z"
+              fill="#82ca9d"
+              height={108.75}
+              width={78}
+              x={408.16666666666663}
+              y={179} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "545.5px 280.5px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "545.5px 280.5px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "545.5px 280.5px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "545.5px 280.5px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "545.5px 280.5px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 506.49999999999994,261.1666666666667 h 78 v 19.333333333333314 h -78 Z"
+              fill="#82ca9d"
+              height={19.333333333333314}
+              width={78}
+              x={506.49999999999994}
+              y={261.1666666666667} />
+          </g>
+        </g>
+      </g>
+      <g
+        className="recharts-layer recharts-bar">
+        <g
+          className="recharts-layer recharts-bar-rectangles"
+          clipPath={null}>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "53.83333333333333px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "53.83333333333333px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "53.83333333333333px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "53.83333333333333px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "53.83333333333333px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 14.833333333333332,275.6666666666667 h 78 v 19.333333333333314 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={19.333333333333314}
+              width={78}
+              x={14.833333333333332}
+              y={275.6666666666667} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "152.16666666666666px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "152.16666666666666px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "152.16666666666666px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "152.16666666666666px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "152.16666666666666px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 113.16666666666666,282.9166666666667 h 78 v 12.083333333333314 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={12.083333333333314}
+              width={78}
+              x={113.16666666666666}
+              y={282.9166666666667} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "250.5px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "250.5px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "250.5px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "250.5px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "250.5px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 211.5,258.75 h 78 v 36.25 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={36.25}
+              width={78}
+              x={211.5}
+              y={258.75} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "348.8333333333333px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "348.8333333333333px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "348.8333333333333px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "348.8333333333333px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "348.8333333333333px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 309.8333333333333,292.5833333333333 h 78 v 2.4166666666666856 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={2.4166666666666856}
+              width={78}
+              x={309.8333333333333}
+              y={292.5833333333333} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "447.16666666666663px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "447.16666666666663px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "447.16666666666663px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "447.16666666666663px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "447.16666666666663px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 408.16666666666663,287.75 h 78 v 7.25 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={7.25}
+              width={78}
+              x={408.16666666666663}
+              y={287.75} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "545.5px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "545.5px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "545.5px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "545.5px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "545.5px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 506.49999999999994,280.5 h 78 v 14.5 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={14.5}
+              width={78}
+              x={506.49999999999994}
+              y={280.5} />
+          </g>
+        </g>
+      </g>
+    </g>
+    <defs>
+      <linearGradient
+        id="stackBottom"
+        x1="0"
+        x2="0"
+        y1="0"
+        y2="1">
+        <stop
+          offset="5%"
+          stopColor="#8884d8"
+          stopOpacity={0.8} />
+        <stop
+          offset="95%"
+          stopColor="#8884d8"
+          stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+`;
+
+exports[`default: bottom stacked data = issues`] = `
+<div
+  className="recharts-wrapper fnYejN"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchMove={[Function]}
+  style={
+    Object {
+      "cursor": "default",
+      "height": 300,
+      "position": "relative",
+      "width": 600,
+    }
+  }>
+  <svg
+    className="recharts-surface"
+    height={300}
+    style={undefined}
+    version="1.1"
+    viewBox="0 0 600 300"
+    width={600}>
+    <g
+      className="recharts-layer recharts-bar-graphical">
+      <g
+        className="recharts-layer recharts-bar">
+        <g
+          className="recharts-layer recharts-bar-rectangles"
+          clipPath={null}>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "53.83333333333333px 50.91666666666666px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "53.83333333333333px 50.91666666666666px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "53.83333333333333px 50.91666666666666px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "53.83333333333333px 50.91666666666666px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "53.83333333333333px 50.91666666666666px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 14.833333333333332,31.583333333333314 h 78 v 19.333333333333343 h -78 Z"
+              fill="#8884d8"
+              height={19.333333333333343}
+              width={78}
+              x={14.833333333333332}
+              y={31.583333333333314} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "152.16666666666666px 125.83333333333331px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "152.16666666666666px 125.83333333333331px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "152.16666666666666px 125.83333333333331px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "152.16666666666666px 125.83333333333331px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "152.16666666666666px 125.83333333333331px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 113.16666666666666,113.75 h 78 v 12.083333333333314 h -78 Z"
+              fill="#8884d8"
+              height={12.083333333333314}
+              width={78}
+              x={113.16666666666666}
+              y={113.75} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "250.5px 287.75px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "250.5px 287.75px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "250.5px 287.75px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "250.5px 287.75px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "250.5px 287.75px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 211.5,251.5 h 78 v 36.25 h -78 Z"
+              fill="#8884d8"
+              height={36.25}
+              width={78}
+              x={211.5}
+              y={251.5} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "348.8333333333333px 266px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "348.8333333333333px 266px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "348.8333333333333px 266px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "348.8333333333333px 266px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "348.8333333333333px 266px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 309.8333333333333,263.5833333333333 h 78 v 2.4166666666666856 h -78 Z"
+              fill="#8884d8"
+              height={2.4166666666666856}
+              width={78}
+              x={309.8333333333333}
+              y={263.5833333333333} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "447.16666666666663px 186.25px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "447.16666666666663px 186.25px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "447.16666666666663px 186.25px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "447.16666666666663px 186.25px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "447.16666666666663px 186.25px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 408.16666666666663,179 h 78 v 7.25 h -78 Z"
+              fill="#8884d8"
+              height={7.25}
+              width={78}
+              x={408.16666666666663}
+              y={179} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "545.5px 275.6666666666667px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "545.5px 275.6666666666667px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "545.5px 275.6666666666667px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "545.5px 275.6666666666667px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "545.5px 275.6666666666667px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 506.49999999999994,261.1666666666667 h 78 v 14.5 h -78 Z"
+              fill="#8884d8"
+              height={14.5}
+              width={78}
+              x={506.49999999999994}
+              y={261.1666666666667} />
+          </g>
+        </g>
+      </g>
+      <g
+        className="recharts-layer recharts-bar">
+        <g
+          className="recharts-layer recharts-bar-rectangles"
+          clipPath={null}>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "53.83333333333333px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "53.83333333333333px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "53.83333333333333px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "53.83333333333333px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "53.83333333333333px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 14.833333333333332,50.91666666666666 h 78 v 244.08333333333334 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={244.08333333333334}
+              width={78}
+              x={14.833333333333332}
+              y={50.91666666666666} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "152.16666666666666px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "152.16666666666666px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "152.16666666666666px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "152.16666666666666px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "152.16666666666666px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 113.16666666666666,125.83333333333331 h 78 v 169.16666666666669 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={169.16666666666669}
+              width={78}
+              x={113.16666666666666}
+              y={125.83333333333331} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "250.5px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "250.5px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "250.5px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "250.5px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "250.5px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 211.5,287.75 h 78 v 7.25 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={7.25}
+              width={78}
+              x={211.5}
+              y={287.75} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "348.8333333333333px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "348.8333333333333px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "348.8333333333333px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "348.8333333333333px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "348.8333333333333px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 309.8333333333333,266 h 78 v 29 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={29}
+              width={78}
+              x={309.8333333333333}
+              y={266} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "447.16666666666663px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "447.16666666666663px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "447.16666666666663px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "447.16666666666663px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "447.16666666666663px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 408.16666666666663,186.25 h 78 v 108.75 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={108.75}
+              width={78}
+              x={408.16666666666663}
+              y={186.25} />
+          </g>
+          <g
+            className="recharts-layer recharts-bar-rectangle"
+            onAnimationStart={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "MozTransform": "scaleY(0)",
+                "MozTransformOrigin": "545.5px 295px",
+                "OTransform": "scaleY(0)",
+                "OTransformOrigin": "545.5px 295px",
+                "WebkitTransform": "scaleY(0)",
+                "WebkitTransformOrigin": "545.5px 295px",
+                "msTransform": "scaleY(0)",
+                "msTransformOrigin": "545.5px 295px",
+                "transform": "scaleY(0)",
+                "transformOrigin": "545.5px 295px",
+              }
+            }>
+            <path
+              className="recharts-rectangle"
+              d="M 506.49999999999994,275.6666666666667 h 78 v 19.333333333333314 h -78 Z"
+              fill="url(#stackBottom)"
+              fillOpacity={1}
+              height={19.333333333333314}
+              width={78}
+              x={506.49999999999994}
+              y={275.6666666666667} />
+          </g>
+        </g>
+      </g>
+    </g>
+    <defs>
+      <linearGradient
+        id="stackBottom"
+        x1="0"
+        x2="0"
+        y1="0"
+        y2="1">
+        <stop
+          offset="5%"
+          stopColor="#82ca9d"
+          stopOpacity={0.8} />
+        <stop
+          offset="95%"
+          stopColor="#82ca9d"
+          stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+`;
+
+exports[`graph placeholder`] = `
+<div
+  className="cIuTIt" />
+`;

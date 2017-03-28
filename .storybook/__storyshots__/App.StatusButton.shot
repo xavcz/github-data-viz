@@ -1,0 +1,94 @@
+exports[`check-repo state`] = `
+<button
+  className="bOPxEE"
+  disabled={undefined}
+  onClick={[Function]}>
+  <svg
+    className="octicons octicons-repo-pull-icon "
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M13 8V6H7V4h6V2l3 3-3 3zM4 2H3v1h1V2zm7 5h1v6c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v2h-1V1H2v9h9V7zm0 4H1v2h2v-1h3v1h5v-2zM4 6H3v1h1V6zm0-2H3v1h1V4zM3 9h1V8H3v1z"
+      fillRule="evenodd" />
+  </svg>
+  Go to repository!
+</button>
+`;
+
+exports[`error state`] = `
+<button
+  className="SkVZm"
+  disabled={true}
+  onClick={[Function]}>
+  <svg
+    className="octicons octicons-bug-icon "
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M11 10h3V9h-3V8l3.17-1.03-.34-.94L11 7V6c0-.55-.45-1-1-1V4c0-.48-.36-.88-.83-.97L10.2 2H12V1H9.8l-2 2h-.59L5.2 1H3v1h1.8l1.03 1.03C5.36 3.12 5 3.51 5 4v1c-.55 0-1 .45-1 1v1l-2.83-.97-.34.94L4 8v1H1v1h3v1L.83 12.03l.34.94L4 12v1c0 .55.45 1 1 1h1l1-1V6h1v7l1 1h1c.55 0 1-.45 1-1v-1l2.83.97.34-.94L11 11v-1zM9 5H6V4h3v1z"
+      fillRule="evenodd" />
+  </svg>
+  Something bad happened...
+</button>
+`;
+
+exports[`loading state`] = `
+<button
+  className="SkVZm"
+  disabled={true}
+  onClick={[Function]}>
+  <svg
+    className="octicons octicons-hubot-icon "
+    height="16"
+    viewBox="0 0 14 16"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M3 6c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1H3zm8 1.75L9.75 9h-1.5L7 7.75 5.75 9h-1.5L3 7.75V7h.75L5 8.25 6.25 7h1.5L9 8.25 10.25 7H11v.75zM5 11h4v1H5v-1zm2-9C3.14 2 0 4.91 0 8.5V13c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8.5C14 4.91 10.86 2 7 2zm6 11H1V8.5c0-3.09 2.64-5.59 6-5.59s6 2.5 6 5.59V13z"
+      fillRule="evenodd" />
+  </svg>
+  Loading...
+</button>
+`;
+
+exports[`populated state`] = `
+<button
+  className="bOPxEE"
+  disabled={undefined}
+  onClick={[Function]}>
+  <svg
+    className="octicons octicons-graph-icon "
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"
+      fillRule="evenodd" />
+  </svg>
+  Look at the graph!
+</button>
+`;
+
+exports[`populating state`] = `
+<button
+  className="SkVZm"
+  disabled={true}
+  onClick={[Function]}>
+  <svg
+    className="octicons octicons-git-compare-icon "
+    height="16"
+    viewBox="0 0 14 16"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M5 12H4c-.27-.02-.48-.11-.69-.31-.21-.2-.3-.42-.31-.69V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V11c.03.78.34 1.47.94 2.06.6.59 1.28.91 2.06.94h1v2l3-3-3-3v2zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm11 9.48V5c-.03-.78-.34-1.47-.94-2.06-.6-.59-1.28-.91-2.06-.94H9V0L6 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 12 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"
+      fillRule="evenodd" />
+  </svg>
+  Populating graph...
+</button>
+`;

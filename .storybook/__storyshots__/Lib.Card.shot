@@ -1,0 +1,19 @@
+exports[`simple`] = `
+<div
+  className="hFijfz">
+  Yay
+</div>
+`;
+
+exports[`with title`] = `
+<div
+  className="hFijfz">
+  <h3
+    className="cCcCMd">
+    Oyoye
+  </h3>
+  <div>
+    Nom nom nom
+  </div>
+</div>
+`;
